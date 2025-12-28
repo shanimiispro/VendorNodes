@@ -100,10 +100,10 @@ while true; do
         print_divider
         echo
         
-        RAM=32000
+        RAM=64000
         CPU=4
         DISK_SIZE=5000G
-        CONTAINER_NAME=proxmox
+        CONTAINER_NAME=hopingboyz
         IMAGE_NAME=hopingboyz/debain12
         VMDATA_DIR="$PWD/vmdata"
         
