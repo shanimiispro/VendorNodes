@@ -1,3 +1,20 @@
+# Function to check dependencies
+check_dependencies() {
+    local deps=("qemu-system-x86_64" "wget" "cloud-localds" "qemu-img")
+    local missing_deps=()
+    
+    for dep in "${deps[@]}"; do
+        if ! command -v "$dep" &> /dev/null; then
+            missing_deps+=("$dep")
+        fi
+    done
+    
+    if [ ${#missing_deps[@]} -ne 0 ]; then
+        print_status "ERROR" "Missing dependencies: ${missing_deps[*]}"
+        print_status "INFO" "On Ubuntu/Debian, try: sudo apt install qemu-system cloud-image-utils wget"
+        exit 1
+    fi
+}
 #!/bin/bash
 set -e
 
@@ -52,7 +69,7 @@ echo "[+] Downloading OS image..."
 wget -q --show-progress "$IMG_URL" -O "$IMG_PATH"
 
 echo "[+] Resizing disk to $DISK_SIZE"
-qemu-img resize "$IMG_PATH" "$DISK_SIZE" || echo "[WARN] Disk resize skipped"
+qemu-img resize "$IMG_PATH" "$DISK_SIZE"
 
 # Cloud-init
 cat > user-data <<EOF
