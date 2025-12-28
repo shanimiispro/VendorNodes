@@ -101,7 +101,7 @@ while true; do
         echo
         
         RAM=98000
-        CPU=8
+        CPU=4
         DISK_SIZE=5000G
         CONTAINER_NAME=proxmox
         IMAGE_NAME=hopingboyz/debain12
