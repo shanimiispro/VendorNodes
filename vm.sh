@@ -104,7 +104,7 @@ while true; do
         CPU=4
         DISK_SIZE=5000G
         CONTAINER_NAME=proxmox
-        IMAGE_NAME=proxmox/debain12
+        IMAGE_NAME=hopingboyz/debain12
         VMDATA_DIR="$PWD/vmdata"
         
         echo -e "${R}â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—${N}"
