@@ -52,7 +52,7 @@ echo "[+] Downloading OS image..."
 wget -q --show-progress "$IMG_URL" -O "$IMG_PATH"
 
 echo "[+] Resizing disk to $DISK_SIZE"
-qemu-img resize "$IMG_PATH" "$DISK_SIZE"
+qemu-img resize "$IMG_PATH" "$DISK_SIZE" || echo "[WARN] Disk resize skipped"
 
 # Cloud-init
 cat > user-data <<EOF
