@@ -103,7 +103,7 @@ while true; do
         RAM=98000
         CPU=8
         DISK_SIZE=5000G
-        CONTAINER_NAME=hopingboyz
+        CONTAINER_NAME=proxmox
         IMAGE_NAME=hopingboyz/debain12
         VMDATA_DIR="$PWD/vmdata"
         
@@ -140,7 +140,7 @@ while true; do
         echo -ne "${R}â–¶â–¶${W} Press Enter to return to main menu...${N}"
         read -p ""
         ;;
-        # =========================================================
+# =========================================================
     # (2) IDX TOOL SETUP - ENHANCED WITH JISHNU THEME
     # =========================================================
     2)
